@@ -20,18 +20,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // add ar fragment from the ui
 
         arfragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arfragment);
 
+            // when tap, put the AR asset on the plane
+
         arfragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
 
+            // hook the ar asset to the plane
 
             Anchor anchor = hitResult.createAnchor();
 
+
+            //render model to the plane
+
             ModelRenderable.builder()
-                    .setSource(this, Uri.parse("andy.sfb"))
+
+                    // get resources
+                    .setSource(this, Uri.parse("gundam.sfb"))
+
+                    //when the asset is loaded, render to the camera
                     .build()
+                    // add the asset to the plane
                     .thenAccept(modelRenderable -> addModelToScene(anchor, modelRenderable))
+
+                    //if error, display error
                     .exceptionally(throwable -> {
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
                         builder.setMessage(throwable.getMessage())
@@ -42,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+        //    add model to the plane on tap
     private void addModelToScene(Anchor anchor, ModelRenderable modelRenderable){
         AnchorNode anchorNode = new AnchorNode(anchor);
         TransformableNode transformableNode = new TransformableNode(arfragment.getTransformationSystem());

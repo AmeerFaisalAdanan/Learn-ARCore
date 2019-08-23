@@ -49,3 +49,9 @@ sceneform.asset('sampledata/andy.obj',
         'default',
         'sampledata/andy.sfa',
         'src/main/assets/andy')
+
+
+sceneform.asset('sampledata/gundam.obj',
+        'default',
+        'sampledata/gundam.sfa',
+        'src/main/assets/gundam')
