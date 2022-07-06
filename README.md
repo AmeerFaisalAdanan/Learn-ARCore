@@ -1,6 +1,8 @@
 # Issue regarding import sceneform assets <As of 7 April 2020>
 Just to note that there are some error while importing the asset using Arcore Import Sceneform Asset. Import Sceneform Asset would fail to import the asset as of this time of Android Studio and ARCore version.
 
+![workflow](https://github.com/AmeerFaisalAdanan/Learn-ARCore/actions/workflows/android.yml/badge.svg)
+
 
 
 ## Workaround
