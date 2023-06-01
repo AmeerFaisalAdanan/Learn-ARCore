@@ -21,6 +21,9 @@ jobs:
 
       - name: Grant rights
         run: chmod +x build.gradle
+        
+      - name: Make Gradle Executable
+        run: chmod +x ./gradlew
 
       - name: Build with Gradle
         id: build
