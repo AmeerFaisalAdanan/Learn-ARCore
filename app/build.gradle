@@ -3,7 +3,6 @@ apply plugin: 'com.google.ar.sceneform.plugin'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.helloar"
         minSdkVersion 25
@@ -45,10 +44,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 
-sceneform.asset('sampledata/andy.obj',
-        'default',
-        'sampledata/andy.sfa',
-        'src/main/assets/andy')
+//sceneform.asset('sampledata/andy.obj',
+//        'default',
+//        'sampledata/andy.sfa',
+//        'src/main/assets/andy')
 
 
 sceneform.asset('sampledata/gundam.obj',
