@@ -13,10 +13,11 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Java JDK
-        uses: actions/setup-java@v1.4.4
+      - name: Setup Java
+        uses: actions/setup-java@v3
         with:
-          java-version: openjdk-11-jdk
+          distribution: 'temurin'
+          java-version: '17'
 
       - name: Grant rights
         run: chmod +x build.gradle
